@@ -1,0 +1,46 @@
+{% extends 'student_template/base_template.html' %}
+{% block page_title %}
+Fee Status 
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+                    <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+
+            <!-- /.card -->
+           <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Fee Status </h3>
+              </div>
+
+               <div class="table">
+               <table class="table">
+                   <tr>
+                       <th>ID</th>
+                       <th>Date</th>
+                       <th>Due Date</th>
+                       <th>Amount</th>
+                   </tr>
+                   {% for row in studentfee %}
+                        <tr>
+                            <td>{{ row.id }}</td>
+                            <td>{{ row.given_date }}</td>
+                            <td>{{ row.due_date }}</td>
+                            <td>{{ row.fee_amount }}</td>
+                        </tr>
+                   {% endfor %}
+               </table>
+               </div>
+            </div>
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}
